@@ -21,20 +21,15 @@
     ##
     # Now the bash general stuff.
     #
-    - name: Create directory
-      action: file path=/opt/bash state=directory
-
-    - name: Functions
-      action: copy src=../bash/functions dest=/opt/bash/functions
-
-    - name: Aliases
-      action: copy src=../bash/aliases dest=/opt/bash/aliases
-
-    - name: Variables
-      action: copy src=../bash/variables dest=/opt/bash/variables
+    - include: ../bash/bash.yml
 
     - name: Bashrc
       action: copy src=files/etc-bashrc dest=/etc/bashrc
+
+    ##
+    # Mac mounts.
+    #
+    - include: ../mounts/mounts.yml
 
     ##
     # To get 'ls' to show hidden files first, this is required.
