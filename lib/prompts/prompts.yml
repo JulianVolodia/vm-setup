@@ -1,0 +1,18 @@
+---
+##
+# Generic prompt actions
+#
+- name: Create directory
+  action: file path=/opt/prompts state=directory
+
+- name: Blue
+  action: copy src=../lib/prompts/blue_prompt dest=/opt/prompts/blue_prompt
+
+- name: Red
+  action: copy src=../lib/prompts/red_prompt dest=/opt/prompts/red_prompt
+
+- name: Green
+  action: copy src=../lib/prompts/green_prompt dest=/opt/prompts/green_prompt
+
+- name: Colors
+  action: copy src=../lib/prompts/colors dest=/opt/prompts/colors

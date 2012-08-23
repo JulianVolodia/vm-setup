@@ -10,7 +10,7 @@
     ##
     # Prompts: Move files into place and configure
     #
-    - include: ../prompts/prompts.yml
+    - include: ../lib/prompts/prompts.yml
 
     - name: For mark's home directory
       action: copy src=files/mark-bashrc dest=/home/mark/.bashrc owner=mark group=mark
@@ -21,7 +21,7 @@
     ##
     # Now the bash general stuff.
     #
-    - include: ../bash/bash.yml
+    - include: ../lib/bash/bash.yml
 
     - name: Bashrc
       action: copy src=files/etc-bashrc dest=/etc/bashrc
@@ -29,16 +29,16 @@
     ##
     # Mac mounts.
     #
-    - include: ../mounts/mounts.yml
+    - include: ../lib/mounts/mounts.yml
 
     ##
     # Git config
     #
     - name: For mark's home directory
-      action: copy src=../git/gitconfig dest=/home/mark/.gitconfig owner=mark group=mark
+      action: copy src=../lib/git/gitconfig dest=/home/mark/.gitconfig owner=mark group=mark
 
     - name: For root's home directory
-      action: copy src=../git/gitconfig dest=/root/.gitconfig owner=root group=root
+      action: copy src=../lib/git/gitconfig dest=/root/.gitconfig owner=root group=root
 
     ##
     # To get 'ls' to show hidden files first, this is required.

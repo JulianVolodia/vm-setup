@@ -1,0 +1,15 @@
+---
+##
+# Generic bash actions
+#
+- name: Create directory
+  action: file path=/opt/bash state=directory
+
+- name: Functions
+  action: copy src=../lib/bash/functions dest=/opt/bash/functions
+
+- name: Aliases
+  action: copy src=../lib/bash/aliases dest=/opt/bash/aliases
+
+- name: Variables
+  action: copy src=../lib/bash/variables dest=/opt/bash/variables
