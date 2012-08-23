@@ -1,0 +1,59 @@
+##########################
+# Standard UNIX
+##########################
+alias l='ls -lh'
+alias la='ls -Alh'
+alias grep='grep --color=auto'
+
+##########################
+# SSH shortcuts
+##########################
+alias dev1='ssh dev1.fourkitchens.com'
+alias baboon='ssh baboon'
+alias multidev='ssh multidev'
+alias upovm='ssh upovm'
+alias twdev='ssh twdev'
+alias twvm='ssh root@twvm'
+alias dorvm='ssh dorvm'
+alias tw='ssh training.wheels'
+alias frontiers='ssh frontiers'
+alias ada='ssh ada'
+alias upoprod='ssh upo-webprod.its.utexas.edu'
+alias fedoravm='ssh fedoravm'
+
+##########################
+# Version control
+##########################
+alias svnupdry='svn merge --dry-run -r BASE:HEAD .'
+alias cvs-s='cvs status | grep "^File"'
+alias cvs-ss='cvs -q status | grep ^[?F] | grep -v "to-date"'
+alias bllf='bzr log --line --forward'
+
+##########################
+# Convenience
+##########################
+alias snh='sudo nano /etc/hosts'
+alias rmds='find . -name ".DS_Store" -exec rm -rf {} \;'
+alias hg='history | fgrep'
+
+##########################
+# Centos Convenience
+##########################
+alias smr='sudo /sbin/service memcached restart'
+alias svr='sudo /sbin/service varnish restart'
+alias shr='sudo /sbin/service httpd restart'
+
+##########################
+# Ubuntu Convenience
+##########################
+alias iar='sudo /etc/init.d/apache2 restart'
+alias ivr='sudo /etc/init.d/varnish restart'
+alias iqr='sudo /etc/init.d/mysql restart'
+
+##########################
+# Application launchers
+##########################
+alias selenium='java -jar ~/Applications/selenium/selenium-server-*/selenium-server.jar'
+alias s3='~/Applications/s3cmd-0.9.9/s3cmd'
+alias cg2dot='~/Applications/xdebugtoolkit/cg2dot.py'
+alias ecdrush='../drush/drush --uri=http://centosvm.economist.com'

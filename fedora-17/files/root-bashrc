@@ -1,0 +1,22 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Remove the long delay that happens when an incorrect command is typed.
+unset command_not_found_handle
+
+# Bring in color table and prompt.
+DIR="/opt/prompts"
+COLOR_PROMPT="$DIR/red_prompt"
+COLORS="$DIR/colors"
+[ -r $COLORS ] && . $COLORS
+[ -r $COLOR_PROMPT ] && . $COLOR_PROMPT

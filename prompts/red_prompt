@@ -1,0 +1,1 @@
+PS1="\[$txtred\]\h::\u [\[$txtpur\]\W\[$txtred\]]# \[$txtrst\]"

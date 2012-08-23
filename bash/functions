@@ -1,0 +1,57 @@
+##########################
+# Drupal
+##########################
+function rsm() {
+  echo "rsync -avzh --exclude='LICENSE.txt' ./ ~/Workarea/${1}/";
+  if [ -z "$1" ]
+  then
+    echo "Please pass the name of the module in ~/Workarea";
+    return 0;
+  fi
+  rsync -avzh --exclude='*.info' --exclude='LICENSE.txt' ./ ~/Workarea/"${1}"/;
+}
+
+function rsp() {
+  echo "rsync -avzh --exclude='LICENSE.txt' --exclude='modules/contrib' --exclude='libraries' ./ ~/Workarea/${1}/";
+  if [ -z "$1" ]
+  then
+    echo "Please pass the name of the module in ~/Workarea";
+    return 0;
+  fi
+  rsync -avzh --exclude='*.info' --exclude='LICENSE.txt' --exclude='modules/contrib' --exclude='libraries' ./ ~/Workarea/"${1}"/;
+}
+
+##########################
+# Old - for reference
+##########################
+
+function getrevs() {
+	cvs log "${1}" | egrep 'DRUPAL-.*:' | sort
+}
+
+function updatemod(){
+	cvs update -r DRUPAL-6--"${1}" -dP
+}
+
+function getdrupal(){
+	FOLDER=${PWD##*/};
+	cd ..;
+	cvs -z6 -d:pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal checkout -d $FOLDER -r DRUPAL-"${1}" drupal;
+	cd $FOLDER
+}
+
+function updatedrupal(){
+	cvs update -r DRUPAL-"${1}" -dP
+}
+
+function getmod () {
+	MODULE="${1}";
+	VERSION="${2}";
+	cvs -z6 -d:pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal-contrib co -r DRUPAL-6--$VERSION -d ./$MODULE contributions/modules/$MODULE;
+}
+
+function exportmod() {
+	MODULE="${1}";
+	VERSION="${2}";
+	cvs -z6 -d:pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal-contrib export -r DRUPAL-6--$VERSION -d ./$MODULE contributions/modules/$MODULE;
+}
