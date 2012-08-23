@@ -32,6 +32,15 @@
     - include: ../mounts/mounts.yml
 
     ##
+    # Git config
+    #
+    - name: For mark's home directory
+      action: copy src=../git/gitconfig dest=/home/mark/.gitconfig owner=mark group=mark
+
+    - name: For root's home directory
+      action: copy src=../git/gitconfig dest=/root/.gitconfig owner=root group=root
+
+    ##
     # To get 'ls' to show hidden files first, this is required.
     #
     - name: Make ls show hidden files and dirs first.

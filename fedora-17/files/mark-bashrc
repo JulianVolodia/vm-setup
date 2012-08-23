@@ -16,3 +16,6 @@ COLOR_PROMPT="$DIR/blue_prompt"
 COLORS="$DIR/colors"
 [ -r $COLORS ] && . $COLORS
 [ -r $COLOR_PROMPT ] && . $COLOR_PROMPT
+
+# Ansible setup for running from checkout
+source /home/mark/Workarea/ansible/hacking/env-setup -q
