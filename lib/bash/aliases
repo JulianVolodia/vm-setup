@@ -6,6 +6,11 @@ alias la='ls -Alh'
 alias grep='grep --color=auto'
 
 ##########################
+# For systemd
+##########################
+alias psc='ps xawf -eo pid,user,cgroup,args'
+
+##########################
 # SSH shortcuts
 ##########################
 alias dev1='ssh dev1.fourkitchens.com'
