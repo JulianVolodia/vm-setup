@@ -1,1 +1,1 @@
-PS1="\[$txtblu\]\h::\u [\[$txtpur\]\W\[$txtblu\]]\$ \[$txtrst\]"
+PS1="\[$txtblu\]\h [\[$txtpur\]\w\[$txtblu\]]\$ \[$txtrst\]"
