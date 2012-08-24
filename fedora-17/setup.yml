@@ -27,9 +27,19 @@
       action: copy src=files/etc-bashrc dest=/etc/bashrc
 
     ##
-    # Mac mounts.
+    # Mac host mounts over NFS. Use systemd to automount them on first access,
+    # using noauto,comment=systemd.automount
     #
     - include: ../lib/mounts/mounts.yml
+
+    - name: Mount Dropbox
+      action: mount name=/home/mark/Dropbox src=machost:/Users/mark/Dropbox fstype=nfs opts=rw,suid,exec,noauto,sync,soft,timeo=20,comment=systemd.automount dump=0 passno=0 state=mounted
+
+    - name: Mount Workarea
+      action: mount name=/home/mark/Workarea src=machost:/Users/mark/Workarea fstype=nfs opts=rw,suid,exec,noauto,sync,soft,timeo=20,comment=systemd.automount dump=0 passno=0 state=mounted
+
+    - name: Mount Sites
+      action: mount name=/home/mark/Sites src=machost:/Users/mark/Sites fstype=nfs opts=rw,suid,exec,noauto,sync,soft,timeo=20,comment=systemd.automount dump=0 passno=0 state=mounted
 
     ##
     # Git config

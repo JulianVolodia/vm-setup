@@ -10,12 +10,3 @@
 
 - name: Sites dir
   action: file path=/home/mark/Sites state=directory owner=mark group=mark
-
-- name: Mount Dropbox
-  action: mount name=/home/mark/Dropbox src=machost:/Users/mark/Dropbox fstype=nfs opts=rw,suid,exec,auto,sync,soft,timeo=20 dump=0 passno=0 state=mounted
-
-- name: Mount Workarea
-  action: mount name=/home/mark/Workarea src=machost:/Users/mark/Workarea fstype=nfs opts=rw,suid,exec,auto,sync,soft,timeo=20 dump=0 passno=0 state=mounted
-
-- name: Mount Sites
-  action: mount name=/home/mark/Sites src=machost:/Users/mark/Sites fstype=nfs opts=rw,suid,exec,auto,sync,soft,timeo=20 dump=0 passno=0 state=mounted
