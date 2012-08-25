@@ -8,6 +8,11 @@
 
   tasks:
     ##
+    # SSH Keys.
+    #
+    - include: ../lib/ssh/keys.yml
+
+    ##
     # Prompts: Move files into place and configure
     #
     - include: ../lib/prompts/prompts.yml
@@ -27,8 +32,7 @@
       action: copy src=files/etc-profile-d-mark-setup-sh dest=/etc/profile.d/mark-setup.sh
 
     ##
-    # Mac host mounts over NFS. Use systemd to automount them on first access,
-    # using noauto,comment=systemd.automount
+    # Mac host mounts over NFS.
     #
     - include: ../lib/mounts/mounts.yml
 
