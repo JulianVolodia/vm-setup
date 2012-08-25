@@ -8,7 +8,12 @@
 
   tasks:
     ##
-    # Prompts: Move files into place and configure
+    # SSH Keys.
+    #
+    - include: ../lib/ssh/keys.yml
+
+    ##
+    # Prompts: Move files into place and configure.
     #
     - include: ../lib/prompts/prompts.yml
 
@@ -42,7 +47,7 @@
       action: mount name=/home/mark/Sites src=machost:/Users/mark/Sites fstype=nfs opts=rw,suid,exec,noauto,sync,soft,timeo=20,comment=systemd.automount dump=0 passno=0 state=mounted
 
     ##
-    # Git config
+    # Git config.
     #
     - name: For mark's home directory
       action: copy src=../lib/git/gitconfig dest=/home/mark/.gitconfig owner=mark group=mark

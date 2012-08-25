@@ -1,0 +1,15 @@
+---
+##
+# SSH keys.
+#
+- name: Create .ssh for mark.
+  action: file path=/home/mark/.ssh state=directory mode=700 owner=mark group=mark
+
+- name: Create .ssh for root.
+  action: file path=/root/.ssh state=directory mode=700 owner=root group=root
+
+- name: Authorized keys for mark.
+  action: copy src=../lib/ssh/authorized_keys dest=/home/mark/.ssh/authorized_keys mode=600 owner=mark group=mark
+
+- name: Authorized keys for root.
+  action: copy src=../lib/ssh/authorized_keys dest=/root/.ssh/authorized_keys mode=600 owner=mark group=mark
