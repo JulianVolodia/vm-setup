@@ -12,4 +12,4 @@
   action: copy src=../lib/ssh/authorized_keys dest=/home/mark/.ssh/authorized_keys mode=600 owner=mark group=mark
 
 - name: Authorized keys for root.
-  action: copy src=../lib/ssh/authorized_keys dest=/root/.ssh/authorized_keys mode=600 owner=mark group=mark
+  action: copy src=../lib/ssh/authorized_keys dest=/root/.ssh/authorized_keys mode=600 owner=root group=root
