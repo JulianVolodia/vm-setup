@@ -49,11 +49,7 @@
     ##
     # Git config.
     #
-    - name: For mark's home directory
-      action: copy src=../lib/git/gitconfig dest=/home/mark/.gitconfig owner=mark group=mark
-
-    - name: For root's home directory
-      action: copy src=../lib/git/gitconfig dest=/root/.gitconfig owner=root group=root
+    - include: ../lib/git/git.yml
 
     ##
     # To get 'ls' to show hidden files first.
