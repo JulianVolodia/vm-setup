@@ -1,0 +1,59 @@
+##
+# Configure my prompts and things for Ubuntu 10.04.
+#
+
+---
+- name: Ubuntu 10.04
+  hosts: all
+  user: root
+  gather_facts: False
+
+  tasks:
+    ##
+    # SSH Keys.
+    #
+    - include: ../lib/ssh/keys.yml tags=ssh
+
+    ##
+    # Prompts: Move files into place and configure
+    #
+    - include: ../lib/prompts/prompts.yml tags=prompt
+
+    - name: For mark's home directory
+      action: copy src=files/mark-bashrc dest=/home/mark/.bashrc owner=mark group=mark
+      tags: prompt
+
+    - name: For root's home directory
+      action: copy src=files/root-bashrc dest=/root/.bashrc owner=root group=root
+      tags: prompt
+
+    ##
+    # Now the bash general stuff.
+    #
+    - include: ../lib/bash/bash.yml tags=bash
+
+    - name: Bashrc
+      action: copy src=files/etc-profile-d-mark-setup-sh dest=/etc/profile.d/mark-setup.sh mode=755
+      tags: bash
+
+    ##
+    # Mac host mounts over NFS.
+    #
+    - include: ../lib/mounts/mounts.yml tags=mount
+
+    - name: Mount Dropbox
+      action: mount name=/home/mark/Dropbox src=machost:/Users/mark/Dropbox fstype=nfs opts=rw,suid,exec,auto,sync,soft,timeo=20 dump=0 passno=0 state=mounted
+      tags: mount
+
+    - name: Mount Workarea
+      action: mount name=/home/mark/Workarea src=machost:/Users/mark/Workarea fstype=nfs opts=rw,suid,exec,auto,sync,soft,timeo=20 dump=0 passno=0 state=mounted
+      tags: mount
+
+    - name: Mount Sites
+      action: mount name=/home/mark/Sites src=machost:/Users/mark/Sites fstype=nfs opts=rw,suid,exec,auto,sync,soft,timeo=20 dump=0 passno=0 state=mounted
+      tags: mount
+
+    ##
+    # Git config
+    #
+    - include: ../lib/git/git.yml tags=git

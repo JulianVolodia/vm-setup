@@ -1,0 +1,8 @@
+# Bring in variables from opt sync folder.
+[ -r /opt/bash/variables ] && . /opt/bash/variables
+
+# Bring in aliases from opt sync folder.
+[ -r /opt/bash/aliases ] && . /opt/bash/aliases
+
+# Bring in functions from opt sync folder.
+[ -r /opt/bash/functions ] && . /opt/bash/functions
