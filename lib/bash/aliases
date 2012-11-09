@@ -14,6 +14,7 @@ alias psc='ps xawf -eo pid,user,cgroup,args'
 # SSH shortcuts
 ##########################
 alias dev1='ssh dev1.fourkitchens.com'
+alias dev2='ssh dev2.fourkitchens.com'
 alias baboon='ssh baboon'
 alias multidev='ssh multidev'
 alias upovm='ssh upovm'
