@@ -14,7 +14,7 @@ alias psc='ps xawf -eo pid,user,cgroup,args'
 # SSH shortcuts
 ##########################
 alias dev1='ssh dev1.fourkitchens.com'
-alias dev2='ssh dev2.fourkitchens.com'
+alias dev2='ssh webchef2.com'
 alias baboon='ssh baboon'
 alias fedoravm='ssh fedoravm'
 alias twcontrol='ssh ec2-23-22-215-46.compute-1.amazonaws.com'
