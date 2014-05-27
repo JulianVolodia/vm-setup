@@ -1,2 +1,11 @@
-export HISTFILESIZE=5000
 export EDITOR=nano
+
+# Bash
+export HISTCONTROL=ignoredups:erasedups
+export HISTFILESIZE=5000
+
+# Bash - append history entries
+shopt -s histappend
+
+# After each command, save and reload history
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
