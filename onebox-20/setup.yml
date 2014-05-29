@@ -4,7 +4,7 @@
 
 ---
 - name: Onebox 20
-  hosts: all
+  hosts: localhost
   gather_facts: False
   user: root
 
@@ -15,7 +15,7 @@
     - include: ../lib/prompts/prompts.yml tags=prompt
 
     - name: For root's home directory
-      action: copy src=files/root_custom dest=/root/.bash_custom owner=root group=root
+      action: copy src=files/root-bash_custom dest=/root/.bash_custom owner=root group=root
       tags: prompt
 
     ##
