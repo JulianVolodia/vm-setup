@@ -8,11 +8,13 @@ alias moshe='mosh --predict=experimental'
 alias pg='ps axf | fgrep -i'
 alias jl='python -mjson.tool | less'
 alias json='python -mjson.tool'
+alias sg='netstat -lnptu | grep'
 
 ##########################
 # For systemd
 ##########################
 alias psc='ps xawf -eo pid,user,cgroup,args'
+alias ug='systemctl --full --all | fgrep -i'
 
 ##########################
 # SSH shortcuts
@@ -25,4 +27,3 @@ alias fedoravm='ssh fedoravm'
 alias snh='sudo nano /etc/hosts'
 alias rmds='find . -name ".DS_Store" -exec rm -rf {} \;'
 alias hg='history | fgrep -i'
-alias pg='ps axf | fgrep -i'

@@ -21,3 +21,6 @@ export LANG="POSIX"
 
 # Bring in functions from opt sync folder.
 [ -r /opt/bash/functions ] && . /opt/bash/functions
+
+# Can't be in master alias list because the 'u' doesn't work on Mac.
+alias pg='ps auxf | fgrep -i'
