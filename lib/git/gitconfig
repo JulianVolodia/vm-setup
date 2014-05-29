@@ -36,5 +36,9 @@
 
   rhh = reset --hard HEAD
 
+  latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
+
 [url "http://git.drupal.org/project/"]
   insteadOf = "do:"
+[push]
+  default = simple

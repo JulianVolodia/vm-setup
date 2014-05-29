@@ -1,0 +1,36 @@
+##
+# Configure my prompts and things, for Onebox 20.
+#
+
+---
+- name: Onebox 20
+  hosts: all
+  gather_facts: False
+  user: root
+
+  tasks:
+    ##
+    # Prompts: Move files into place and configure.
+    #
+    - include: ../lib/prompts/prompts.yml tags=prompt
+
+    - name: For root's home directory
+      action: copy src=files/root_custom dest=/root/.bash_custom owner=root group=root
+      tags: prompt
+
+    ##
+    # Now the bash general stuff.
+    #
+    - include: ../lib/bash/bash.yml tags=bash
+
+    ##
+    # Git config.
+    #
+    - include: ../lib/git/git.yml tags=git
+
+    ##
+    # To get 'ls' to show hidden files first.
+    #
+    - name: Make ls show hidden files and dirs first.
+      action: copy src=files/etc-sysconfig-i18n dest=/etc/sysconfig/i18n
+      tags: general
