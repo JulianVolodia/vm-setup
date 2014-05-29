@@ -5,7 +5,7 @@ unset command_not_found_handle
 
 # Bring in color table and prompt.
 DIR="/opt/prompts"
-COLOR_PROMPT="$DIR/red_prompt"
+COLOR_PROMPT="$DIR/blue_prompt"
 COLORS="$DIR/colors"
 [ -r $COLORS ] && . $COLORS
 [ -r $COLOR_PROMPT ] && . $COLOR_PROMPT

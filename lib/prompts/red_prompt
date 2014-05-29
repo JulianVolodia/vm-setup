@@ -1,2 +1,1 @@
-# The bash prompt
-PS1=$txtblu"\h ["$txtpur"\w"$txtblu"]"$txtrst'$(BRANCH=`git rev-parse --abbrev-ref HEAD 2> /dev/null`; if [ -n "$BRANCH" ]; then DIRTY=`git st --porcelain 2> /dev/null`; if [ -n "$DIRTY" ]; then echo "'$txtred' ($BRANCH) '$txtrst'"; else echo "'$txtylw' ($BRANCH) '$txtrst'"; fi fi;)'$txtblu"\$ "$txtrst
+PS1="\[$txtred\]\h [\[$txtpur\]\w\[$txtred\]]# \[$txtrst\]"
