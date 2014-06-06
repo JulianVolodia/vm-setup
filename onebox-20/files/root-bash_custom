@@ -1,15 +1,5 @@
 # .bashrc
 
-# Remove the long delay that happens when an incorrect command is typed.
-unset command_not_found_handle
-
-# Bring in color table and prompt.
-DIR="/opt/prompts"
-COLOR_PROMPT="$DIR/blue_prompt"
-COLORS="$DIR/colors"
-[ -r $COLORS ] && . $COLORS
-[ -r $COLOR_PROMPT ] && . $COLOR_PROMPT
-
 # For showing hidden files before directories in 'ls'
 export LANG="POSIX"
 
