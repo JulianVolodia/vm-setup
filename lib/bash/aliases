@@ -27,3 +27,8 @@ alias fedoravm='ssh fedoravm'
 alias snh='sudo nano /etc/hosts'
 alias rmds='find . -name ".DS_Store" -exec rm -rf {} \;'
 alias hg='history | fgrep -i'
+
+##########################
+# Pantheon
+##########################
+alias api1='ssh api1.live.getpantheon.com'
