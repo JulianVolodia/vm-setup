@@ -9,11 +9,6 @@
   user: root
 
   tasks:
-    ##
-    # Prompts: Move files into place and configure.
-    #
-    - include: ../lib/prompts/prompts.yml tags=prompt
-
     - name: For root's home directory
       action: copy src=files/root-bash_custom dest=/root/.bash_custom owner=root group=root
       tags: prompt
@@ -27,10 +22,3 @@
     # Git config.
     #
     - include: ../lib/git/git.yml tags=git
-
-    ##
-    # To get 'ls' to show hidden files first.
-    #
-    - name: Make ls show hidden files and dirs first.
-      action: copy src=files/etc-sysconfig-i18n dest=/etc/sysconfig/i18n
-      tags: general
