@@ -27,4 +27,4 @@
     # Utility link
     #
     - name: Link to systemd
-      file: src:/etc/systemd/system dest=/root/sd owner=root group=root state=link
+      file: src=/etc/systemd/system dest=/root/sd owner=root group=root state=link
