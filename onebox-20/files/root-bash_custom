@@ -11,3 +11,9 @@
 
 # Can't be in master alias list because the 'u' doesn't work on Mac.
 alias pg='ps auxf | fgrep -i'
+
+# For Styx
+export GOPATH="/opt/styx"
+
+# Mail check. Stop nagging me.
+unset MAILCHECK

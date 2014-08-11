@@ -9,9 +9,15 @@ alias pg='ps axf | fgrep -i'
 alias jl='python -mjson.tool | less'
 alias json='python -mjson.tool'
 alias sg='netstat -lnptu | grep'
+alias hg='history | fgrep -i'
 
 ##########################
-# For systemd
+# Git
+##########################
+alias gitnuke="git rhh; git clean -fd"
+
+##########################
+# Systemd
 ##########################
 alias psc='ps xawf -eo pid,user,cgroup,args'
 alias ug='systemctl --full --all | fgrep -i'
@@ -19,17 +25,16 @@ alias ug='systemctl --full --all | fgrep -i'
 ##########################
 # SSH shortcuts
 ##########################
-alias fedoravm='ssh fedoravm'
 
 ##########################
 # Convenience
 ##########################
 alias snh='sudo nano /etc/hosts'
 alias rmds='find . -name ".DS_Store" -exec rm -rf {} \;'
-alias hg='history | fgrep -i'
 
 ##########################
 # Pantheon
 ##########################
 alias api1='ssh api1.live.getpantheon.com'
 alias ob='ssh onebox'
+alias psh='panthu ssh'
