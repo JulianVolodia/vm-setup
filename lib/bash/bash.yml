@@ -13,3 +13,6 @@
 
 - name: Variables
   action: copy src=../lib/bash/variables dest=/opt/bash/variables
+
+- name: For iterm2
+  action: copy src=../lib/bash/iterm2_helpers.sh dest=/opt/bash/iterm2_helpers.sh

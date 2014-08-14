@@ -17,3 +17,8 @@ export GOPATH="/opt/styx"
 
 # Mail check. Stop nagging me.
 unset MAILCHECK
+
+# iTerm2 colours
+if [ -f /opt/bash/iterm2_helpers.sh ]; then
+  . /opt/bash/iterm2_helpers.sh
+fi
