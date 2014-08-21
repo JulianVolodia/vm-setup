@@ -9,7 +9,7 @@ alias pg='ps axf | fgrep -i'
 alias jl='python -mjson.tool | less'
 alias json='python -mjson.tool'
 alias sg='netstat -lnptu | grep'
-alias hg='history | fgrep -i'
+alias hgr='history | fgrep -i'
 
 ##########################
 # Git
