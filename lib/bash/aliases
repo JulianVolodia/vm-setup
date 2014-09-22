@@ -10,6 +10,7 @@ alias jl='python -mjson.tool | less'
 alias json='python -mjson.tool'
 alias sg='netstat -lnptu | grep'
 alias hgr='history | fgrep -i'
+alias env='env | sort'
 
 ##########################
 # Git
