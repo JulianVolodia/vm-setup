@@ -40,6 +40,14 @@ gifify() {
   fi
 }
 
+yggdev ()
+{
+    curl_args=$*;
+    ygg_url=api.onebox.getpantheon.com;
+    YGG_CERT=${YGG_CERT:-/etc/pantheon/api.pem};
+    curl --silent -kE "$YGG_CERT" https://${ygg_url}:6008/$curl_args
+}
+
 ##########################
 # Old - for reference
 ##########################
